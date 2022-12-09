@@ -1,6 +1,6 @@
 package net.cubiccl.advent2022.day3
 
-import net.cubiccl.advent2020.NoSolutionException
+import net.cubiccl.advent2022.NoSolutionException
 
 class Rucksack(val contents: String) {
     private val firstCompartment: String

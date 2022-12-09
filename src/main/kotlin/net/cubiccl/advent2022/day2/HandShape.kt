@@ -1,6 +1,6 @@
 package net.cubiccl.advent2022.day2
 
-import net.cubiccl.advent2020.NoSolutionException
+import net.cubiccl.advent2022.NoSolutionException
 
 enum class HandShape(val score: Long, val opponentId: Char, val playerId: Char) {
     ROCK(1, 'A', 'X'),

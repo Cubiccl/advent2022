@@ -2,7 +2,6 @@ package net.cubiccl.advent2022.day5
 
 import net.cubiccl.advent2022.AbstractDay
 import net.cubiccl.advent2022.Advent2022.Companion.isFirstPart
-import net.cubiccl.advent2022.Advent2022.Companion.isSecondPart
 import java.util.*
 
 class Day5 : AbstractDay(5) {

@@ -1,6 +1,5 @@
 package net.cubiccl.advent2022
 
-import net.cubiccl.advent2020.NoSolutionException
 import net.cubiccl.advent2022.day1.Day1
 import net.cubiccl.advent2022.day2.Day2
 import net.cubiccl.advent2022.day3.Day3
@@ -39,8 +38,8 @@ class Advent2022 {
     }
 
     companion object {
-        var isSecondPart = false;
-        var isTest = false;
+        var isSecondPart = false
+        var isTest = false
         val isFirstPart: Boolean
             get() {
                 return !isSecondPart

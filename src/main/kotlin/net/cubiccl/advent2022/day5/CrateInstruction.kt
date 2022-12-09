@@ -9,9 +9,7 @@ class CrateInstruction(private val quantity: Int, private val source: Int, priva
     }
 
     fun execute(stacks: List<Stack<Char>>) {
-        //println(this)
         for (i in 0 until quantity) {
-            //println("Moving ${stacks[source].peek()} from ${source + 1} to ${destination + 1}")
             stacks[destination].push(stacks[source].pop())
         }
     }

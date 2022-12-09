@@ -2,7 +2,7 @@ package net.cubiccl.advent2022.geometry
 
 open class InfiniteGrid<T> {
 
-    internal val grid = mutableMapOf<Position<Int>, T>()
+    private val grid = mutableMapOf<Position<Int>, T>()
 
     fun get(pos: Position<Int>): T? {
         return grid[pos]

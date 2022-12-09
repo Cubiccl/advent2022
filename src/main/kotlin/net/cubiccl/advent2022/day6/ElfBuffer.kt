@@ -1,6 +1,6 @@
 package net.cubiccl.advent2022.day6
 
-import net.cubiccl.advent2020.NoSolutionException
+import net.cubiccl.advent2022.NoSolutionException
 import net.cubiccl.advent2022.Advent2022.Companion.isFirstPart
 
 class ElfBuffer(private val content: String) {

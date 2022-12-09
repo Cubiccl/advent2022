@@ -1,6 +1,6 @@
 package net.cubiccl.advent2022.day3
 
-import net.cubiccl.advent2020.NoSolutionException
+import net.cubiccl.advent2022.NoSolutionException
 
 class RucksackGroup(private val first: Rucksack, private val second: Rucksack, private val third: Rucksack) {
 

@@ -1,6 +1,6 @@
 package net.cubiccl.advent2022.day7
 
-import net.cubiccl.advent2020.NoSolutionException
+import net.cubiccl.advent2022.NoSolutionException
 import net.cubiccl.advent2022.day7.commands.AbstractCommand
 import java.util.*
 

@@ -4,7 +4,7 @@ import net.cubiccl.advent2022.day9.Day9.Companion.knotCount
 import net.cubiccl.advent2022.geometry.Direction
 import net.cubiccl.advent2022.geometry.Position
 
-class RopeInstruction(val direction: Char, val distance: Int) {
+class RopeInstruction(private val direction: Char, private val distance: Int) {
 
     fun execute(rope: Rope, visited: MutableSet<Position<Int>>) {
         for (i in 1..distance) {

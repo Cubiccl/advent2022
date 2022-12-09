@@ -1,6 +1,6 @@
 package net.cubiccl.advent2022.day7.commands
 
-import net.cubiccl.advent2020.NoSolutionException
+import net.cubiccl.advent2022.NoSolutionException
 import net.cubiccl.advent2022.day7.ElfTerminalReader
 
 abstract class AbstractCommand(private val name: String) {
