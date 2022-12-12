@@ -4,9 +4,13 @@ class Grid<T>(val width: Int, val height: Int, initializer: (Position<Int>) -> T
 
     private val grid: List<MutableList<T>>
     val maxX: Int
-        get() { return width - 1 }
+        get() {
+            return width - 1
+        }
     val maxY: Int
-        get() { return height - 1 }
+        get() {
+            return height - 1
+        }
 
     init {
         grid = buildList {
@@ -29,6 +33,33 @@ class Grid<T>(val width: Int, val height: Int, initializer: (Position<Int>) -> T
 
     fun set(x: Int, y: Int, item: T): T {
         return grid[x].set(y, item)
+    }
+
+    fun find(value: T): Position<Int>? {
+        for (x in 0 until width) {
+            for (y in 0 until height) {
+                if (get(x, y) == value) {
+                    return Position(x, y)
+                }
+            }
+        }
+        return null
+    }
+
+    fun findAll(value: T): List<Position<Int>> {
+        val found = mutableListOf<Position<Int>>()
+        for (x in 0 until width) {
+            for (y in 0 until height) {
+                if (get(x, y) == value) {
+                    found.add(Position(x, y))
+                }
+            }
+        }
+        return found
+    }
+
+    fun isInBounds(x: Int, y: Int): Boolean {
+        return x >= 0 && y >= 0 && x < width && y < height
     }
 
 }
