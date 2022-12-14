@@ -11,13 +11,19 @@ class PuzzleInput(private val id: String, private val day: AbstractDay) {
         get() {
             return "/day" + day.id + "/" + (if (isTest) "test/" else "") + id + ".txt"
         }
+    private var ignoreEmptyLines = false
 
     private fun getReader(): BufferedReader {
         return BufferedReader(InputStreamReader(this::class.java.getResource(path).openStream()))
     }
 
+    fun ignoreEmptyLines(): PuzzleInput {
+        ignoreEmptyLines = true
+        return this
+    }
+
     fun getLines(): List<String> {
-        return getReader().readLines()
+        return getReader().readLines().filter { !ignoreEmptyLines || it != "" }
     }
 
     fun <T> getLinesAs(function: (String) -> T): List<T> {

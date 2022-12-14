@@ -4,6 +4,7 @@ import net.cubiccl.advent2022.day1.Day1
 import net.cubiccl.advent2022.day10.Day10
 import net.cubiccl.advent2022.day11.Day11
 import net.cubiccl.advent2022.day12.Day12
+import net.cubiccl.advent2022.day13.Day13
 import net.cubiccl.advent2022.day2.Day2
 import net.cubiccl.advent2022.day3.Day3
 import net.cubiccl.advent2022.day4.Day4
@@ -18,7 +19,7 @@ class Advent2022 {
 
         isTest = args.firstOrNull().toBoolean()
         isSecondPart = args[1].toBoolean()
-        println("Solution is: ${this.play(12)}")
+        println("Solution is: ${this.play(13)}")
     }
 
     private fun play(day: Int): String {
@@ -38,7 +39,7 @@ class Advent2022 {
             9 -> Day9()
             10 -> Day10()
             11 -> Day11()
-            12 -> Day12()
+            13 -> Day13()
             else -> throw NoSolutionException("Unknown day $dayId")
         }
     }
