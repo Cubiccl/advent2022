@@ -10,4 +10,15 @@ data class Position(var x: Int, var y: Int) {
     override fun toString(): String {
         return "[$x, $y]"
     }
+    fun manhattan(to: Position): Int {
+        return abs(x - to.x) + abs(y - to.y)
+    }
+
+    fun minus(range: Int): Position {
+        return Position(x - range, y - range)
+    }
+
+    fun plus(range: Int): Position {
+        return Position(x + range, y + range)
+    }
 }
