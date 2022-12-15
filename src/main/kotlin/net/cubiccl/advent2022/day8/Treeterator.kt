@@ -6,7 +6,7 @@ import kotlin.math.max
 
 class Treeterator(private val treeGrid: Grid<Int>) {
 
-    val visibleTrees = mutableSetOf<Position<Int>>()
+    val visibleTrees = mutableSetOf<Position>()
 
     fun findAllVisibleTrees() {
         findVisible(
@@ -45,10 +45,10 @@ class Treeterator(private val treeGrid: Grid<Int>) {
     private fun findVisible(
         startX: Int,
         startY: Int,
-        singleStep: (Position<Int>) -> Unit,
-        lineStep: (Position<Int>) -> Unit,
-        goToNextLine: (Position<Int>) -> Boolean,
-        stop: (Position<Int>) -> Boolean
+        singleStep: (Position) -> Unit,
+        lineStep: (Position) -> Unit,
+        goToNextLine: (Position) -> Boolean,
+        stop: (Position) -> Boolean
     ) {
         val position = Position(startX, startY)
         while (!stop.invoke(position)) {
@@ -58,9 +58,9 @@ class Treeterator(private val treeGrid: Grid<Int>) {
     }
 
     private fun findVisibleForLine(
-        position: Position<Int>,
-        singleStep: (Position<Int>) -> Unit,
-        goToNextLine: (Position<Int>) -> Boolean
+        position: Position,
+        singleStep: (Position) -> Unit,
+        goToNextLine: (Position) -> Boolean
     ) {
         var max = -1
         while (!goToNextLine.invoke(position)) {
@@ -87,7 +87,7 @@ class Treeterator(private val treeGrid: Grid<Int>) {
         return bestValue
     }
 
-    private fun computeScenery(position: Position<Int>): Long {
+    private fun computeScenery(position: Position): Long {
         val height = treeGrid.get(position)
 
         var left = 0L

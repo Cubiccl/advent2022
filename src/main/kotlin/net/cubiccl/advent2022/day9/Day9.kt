@@ -8,7 +8,7 @@ class Day9 : AbstractDay(9) {
     override fun play(): String {
         val rope = Rope()
         val instructions = readPuzzleInput().getLinesAs(RopeInstruction::parse)
-        val visited = mutableSetOf<Position<Int>>()
+        val visited = mutableSetOf<Position>()
         instructions.forEach { it.execute(rope, visited) }
         return visited.size.toString()
     }

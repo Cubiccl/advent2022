@@ -1,16 +1,16 @@
 package net.cubiccl.advent2022.geometry
 
 open class InfiniteGrid<T>(
-    private val defaultValue: (Position<Int>) -> T? = { null }
+    private val defaultValue: (Position) -> T? = { null }
 ) {
 
-    private val grid = mutableMapOf<Position<Int>, T>()
+    private val grid = mutableMapOf<Position, T>()
 
-    fun get(pos: Position<Int>): T? {
+    fun get(pos: Position): T? {
         return grid[pos] ?: defaultValue.invoke(pos)
     }
 
-    fun set(pos: Position<Int>, item: T): T? {
+    fun set(pos: Position, item: T): T? {
         val previous = get(pos)
         grid[pos.clone()] = item
         return previous ?: defaultValue.invoke(pos)
@@ -20,13 +20,13 @@ open class InfiniteGrid<T>(
         return set(Position(x, y), item)
     }
 
-    fun remove(pos: Position<Int>): T? {
+    fun remove(pos: Position): T? {
         val previous = get(pos)
         grid.remove(pos)
         return previous ?: defaultValue.invoke(pos)
     }
 
-    private fun getAllPos(): Set<Position<Int>> {
+    private fun getAllPos(): Set<Position> {
         return grid.keys
     }
 

@@ -1,6 +1,6 @@
 package net.cubiccl.advent2022.geometry
 
-class Grid<T>(val width: Int, val height: Int, initializer: (Position<Int>) -> T) {
+class Grid<T>(val width: Int, val height: Int, initializer: (Position) -> T) {
 
     private val grid: List<MutableList<T>>
     val maxX: Int
@@ -23,7 +23,7 @@ class Grid<T>(val width: Int, val height: Int, initializer: (Position<Int>) -> T
         }
     }
 
-    fun get(pos: Position<Int>): T {
+    fun get(pos: Position): T {
         return get(pos.x, pos.y)
     }
 
@@ -35,7 +35,7 @@ class Grid<T>(val width: Int, val height: Int, initializer: (Position<Int>) -> T
         return grid[x].set(y, item)
     }
 
-    fun find(value: T): Position<Int>? {
+    fun find(value: T): Position? {
         for (x in 0 until width) {
             for (y in 0 until height) {
                 if (get(x, y) == value) {
@@ -46,8 +46,8 @@ class Grid<T>(val width: Int, val height: Int, initializer: (Position<Int>) -> T
         return null
     }
 
-    fun findAll(value: T): List<Position<Int>> {
-        val found = mutableListOf<Position<Int>>()
+    fun findAll(value: T): List<Position> {
+        val found = mutableListOf<Position>()
         for (x in 0 until width) {
             for (y in 0 until height) {
                 if (get(x, y) == value) {

@@ -1,7 +1,9 @@
 package net.cubiccl.advent2022.geometry
 
-data class Position<T>(var x: T, var y: T) {
-    fun clone(): Position<T> {
+import kotlin.math.abs
+
+data class Position(var x: Int, var y: Int) {
+    fun clone(): Position {
         return Position(x, y)
     }
 

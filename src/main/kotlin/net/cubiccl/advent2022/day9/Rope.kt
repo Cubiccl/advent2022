@@ -7,7 +7,7 @@ import kotlin.math.abs
 
 class Rope {
 
-    private val components = mutableListOf<Position<Int>>()
+    private val components = mutableListOf<Position>()
 
     init {
         components.add(Position(0, 0))
@@ -16,19 +16,19 @@ class Rope {
         }
     }
 
-    fun getHeadPosition(): Position<Int> {
+    fun getHeadPosition(): Position {
         return components[0].clone()
     }
 
-    fun getKnotPosition(knot: Int): Position<Int> {
+    fun getKnotPosition(knot: Int): Position {
         return components[knot].clone()
     }
 
-    fun moveHeadTo(position: Position<Int>) {
+    fun moveHeadTo(position: Position) {
         components[0] = position.clone()
     }
 
-    fun moveKnotTo(knot: Int, position: Position<Int>) {
+    fun moveKnotTo(knot: Int, position: Position) {
         components[knot] = position.clone()
     }
 

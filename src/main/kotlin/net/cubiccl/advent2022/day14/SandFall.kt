@@ -43,7 +43,7 @@ class SandFall(private val cave: RockCave) {
         // If it changed then it didn't find a position to not change then it didn't find ground
     }
 
-    private fun tryToMoveTo(sandPos: Position<Int>, movement: (Position<Int>) -> Position<Int>): Boolean {
+    private fun tryToMoveTo(sandPos: Position, movement: (Position) -> Position): Boolean {
         return (cave.get(movement.invoke(sandPos.clone())) == RockCave.RockCaveTile.AIR).also {
             //println(cave.get(movement.invoke(sandPos.clone())))
             if (it) {

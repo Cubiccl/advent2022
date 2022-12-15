@@ -6,7 +6,7 @@ import net.cubiccl.advent2022.geometry.Position
 
 class RopeInstruction(private val direction: Char, private val distance: Int) {
 
-    fun execute(rope: Rope, visited: MutableSet<Position<Int>>) {
+    fun execute(rope: Rope, visited: MutableSet<Position>) {
         for (i in 1..distance) {
             moveHead(rope)
             println("Head   : ${rope.getHeadPosition()}")

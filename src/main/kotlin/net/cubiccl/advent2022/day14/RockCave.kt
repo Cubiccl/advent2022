@@ -7,11 +7,11 @@ import kotlin.math.min
 
 class RockCave : InfiniteGrid<RockCave.RockCaveTile>({ RockCaveTile.AIR }) {
 
-    private fun setRock(position: Position<Int>) {
+    private fun setRock(position: Position) {
         set(position, RockCaveTile.ROCK)
     }
 
-    fun readPath(path: List<Position<Int>>) {
+    fun readPath(path: List<Position>) {
         (0 until path.lastIndex).forEach {
             val source = path[it]
             val destination = path[it + 1]
@@ -19,7 +19,7 @@ class RockCave : InfiniteGrid<RockCave.RockCaveTile>({ RockCaveTile.AIR }) {
         }
     }
 
-    private fun getWholePath(source: Position<Int>, destination: Position<Int>): List<Position<Int>> {
+    private fun getWholePath(source: Position, destination: Position): List<Position> {
         if (source.x == destination.x) {
             return (min(source.y, destination.y)..max(source.y, destination.y)).map { Position(source.x, it) }
         }
