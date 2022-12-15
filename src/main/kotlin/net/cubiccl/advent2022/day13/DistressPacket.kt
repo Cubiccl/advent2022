@@ -7,7 +7,7 @@ data class DistressPacket(private val content: DistressPacketItem.ItemList) {
     fun compare(other: DistressPacket): Int {
         val result = DistressPacketItem.compareItem(this.content, other.content)
         println("While comparing $this and $other:")
-        return (result?.let { if (it.value) -1 else 1 } ?: 0).also { println(it.toString() + "\n") }
+        return (result.value?.let { if (it) -1 else 1 } ?: 0).also { println(it.toString() + "\n") }
     }
 
     fun isInRightOrder(other: DistressPacket): Boolean {
